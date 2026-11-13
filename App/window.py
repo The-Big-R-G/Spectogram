@@ -1,6 +1,7 @@
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QSurfaceFormat
 from PyQt5.QtWidgets import QApplication, QOpenGLWidget, QShortcut
+from utils import logger
 import moderngl
 import time
 
@@ -62,16 +63,16 @@ class Window(QOpenGLWidget):
     #----------------
 
     def init(self):
-        print("init")
+        logger.info("init")
 
     def size(self,w,h):
-        print("size",w,h)
+        logger.info(f"size {w} {h}")
 
     def draw(self, dt):
-        print("draw", dt)
+        logger.info(f"draw {dt:.4f}")
 
     def exit(self):
-        print('exit')
+        logger.info("exit")
 
 if __name__ == "__main__":
     Window.run()
